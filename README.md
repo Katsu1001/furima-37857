@@ -80,7 +80,7 @@
   |purchases_history|references | null: false, foreign_key: true |
   
   ## Association
-  - has_one :purchase_history
+  - has_many :purchase_histories
 
 
 <!-- 
@@ -107,7 +107,7 @@
   ## Association
   - belongs_to :item
   - belongs_to :user
-  - has_one :purchase
+  - belongs_to :purchase
   
   <!--
   ~購入履歴テーブルが持っている情報~
