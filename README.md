@@ -2,7 +2,7 @@
 
 ## Users テーブル
 
-  |  Coliumn           |  Type      | Option    |
+  |  Column           |  Type      | Option    |
   |------------        |--------    |--------   |
   |nickname            |string      |null:false |
   |email               |string      |unique: true, null:false|
@@ -31,7 +31,7 @@
 
 ## Items テーブル
 
-  |  Coliumn        |  Type     | Option    |
+  |  Column        |  Type     | Option    |
   |------------     |--------   |--------   |
   |name             |string     |null:false |
   |introduction     |text       |null:false |
@@ -69,7 +69,7 @@
 
 ## Purchases テーブル
 
-  |  Coliumn        |Type    | Option    |
+  |  Column        |Type    | Option    |
   |------------     |--------|--------   |
   |postal_code      |string  |null:false |
   |shipping_area_id      |integer  |null:false |
@@ -80,7 +80,7 @@
   |purchases_history|references | null: false, foreign_key: true |
   
   ## Association
-  - has_one :purchase_history
+  - has_many :purchase_histories
 
 
 <!-- 
@@ -99,7 +99,7 @@
 
  ## Purchases_histories テーブル
 
-  |  Coliumn        |Type    | Option    |
+  |  Column        |Type    | Option    |
   |------------     |--------|--------   |
   |user             | references | null: false, foreign_key: true |
   |item             | references | null: false, foreign_key: true |
@@ -107,7 +107,7 @@
   ## Association
   - belongs_to :item
   - belongs_to :user
-  - has_one :purchase
+  - belongs_to :purchase
   
   <!--
   ~購入履歴テーブルが持っている情報~
