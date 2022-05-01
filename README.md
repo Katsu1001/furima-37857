@@ -1,33 +1,8 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # テーブル設計
 
 ## Users テーブル
 
-  |  Coliumn           |  Type      | Option    |
+  |  Column           |  Type      | Option    |
   |------------        |--------    |--------   |
   |nickname            |string      |null:false |
   |email               |string      |unique: true, null:false|
@@ -56,7 +31,7 @@ Things you may want to cover:
 
 ## Items テーブル
 
-  |  Coliumn        |  Type     | Option    |
+  |  Column        |  Type     | Option    |
   |------------     |--------   |--------   |
   |name             |string     |null:false |
   |introduction     |text       |null:false |
@@ -94,7 +69,7 @@ Things you may want to cover:
 
 ## Purchases テーブル
 
-  |  Coliumn        |Type    | Option    |
+  |  Column        |Type    | Option    |
   |------------     |--------|--------   |
   |postal_code      |string  |null:false |
   |shipping_area_id      |integer  |null:false |
@@ -124,7 +99,7 @@ Things you may want to cover:
 
  ## Purchases_histories テーブル
 
-  |  Coliumn        |Type    | Option    |
+  |  Column        |Type    | Option    |
   |------------     |--------|--------   |
   |user             | references | null: false, foreign_key: true |
   |item             | references | null: false, foreign_key: true |
