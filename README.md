@@ -81,7 +81,7 @@
   |purchases_history|references | null: false, foreign_key: true |
   
   ## Association
-  - has_many :purchase_histories
+  - belongs_to :purchase_history
 
 
 <!-- 
@@ -106,9 +106,9 @@
   |item             | references | null: false, foreign_key: true |
 
   ## Association
-  - has_one :item
+  - belongs_to :item
   - belongs_to :user
-  - belongs_to :purchase
+  - has_many :purchases
   
   <!--
   ~購入履歴テーブルが持っている情報~
