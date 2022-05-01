@@ -31,6 +31,7 @@
 
 ## Items テーブル
 
+
   |  Column        |  Type     | Option    |
   |------------     |--------   |--------   |
   |name             |string     |null:false |
@@ -69,6 +70,7 @@
 
 ## Purchases テーブル
 
+
   |  Column        |Type    | Option    |
   |------------     |--------|--------   |
   |postal_code      |string  |null:false |
@@ -98,6 +100,7 @@
  -->
 
  ## Purchases_histories テーブル
+
 
   |  Column        |Type    | Option    |
   |------------     |--------|--------   |
