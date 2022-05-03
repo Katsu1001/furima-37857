@@ -85,9 +85,9 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Family name katakana can't be blank")    
     end
     it "family_name_katakanaがカナ以外では登録できない" do
-      @user.family_name_katakana = 'アイウエオ'
+      @user.family_name_katakana = "あいうえお"
       @user.valid?
-      expect(@user.errors.full_messages).to include()    
+      expect(@user.errors.full_messages).to include("Family name katakana is invalid")    
     end
     it "family_name_katakanaがひらがなでは登録できない" do
       @user.family_name_katakana = 'あいうえお'
@@ -105,7 +105,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("First name katakana is invalid")
     end
     it "first_name_katakanaがひらがなでは登録できない" do
-      @user.first_name_katakana = 'ああああああ'
+      @user.first_name_katakana = 'あいうえお'
       @user.valid?
       expect(@user.errors.full_messages).to include("First name katakana is invalid")
     end
@@ -123,5 +123,3 @@ RSpec.describe User, type: :model do
         end
       end
 end
-
-# binding.pry
