@@ -81,13 +81,12 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
-  
-      context '出品ができるとき' do
-        it "nameとintroduction、category_id、condition_id、delivery_fee_id、shipping_area_id、days_to_ship_id、priceが存在すれば登録できる" do
-          expect(@item).to be_valid
-        end
-      end    
-      
     end
+  
+    context '出品ができるとき' do
+      it "nameとintroduction、category_id、condition_id、delivery_fee_id、shipping_area_id、days_to_ship_id、priceが存在すれば登録できる" do
+        expect(@item).to be_valid
+      end
+    end    
   end
 end
