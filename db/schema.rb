@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_08_154050) do
+ActiveRecord::Schema.define(version: 2022_05_04_082839) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -68,24 +68,6 @@ ActiveRecord::Schema.define(version: 2022_05_08_154050) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
-  create_table "purchase_purchases_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postal_code", null: false
-    t.integer "shipping_area_id", null: false
-    t.string "municipalities", null: false
-    t.string "address", null: false
-    t.string "building_name"
-    t.string "telephone_number", null: false
-    t.bigint "purchases_history_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["purchases_history_id"], name: "index_purchases_on_purchases_history_id"
-  end
-
   create_table "purchases_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
@@ -120,7 +102,6 @@ ActiveRecord::Schema.define(version: 2022_05_08_154050) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "users"
-  add_foreign_key "purchases", "purchases_histories"
   add_foreign_key "purchases_histories", "items"
   add_foreign_key "purchases_histories", "users"
 end
