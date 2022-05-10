@@ -8,6 +8,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+  has_one :purchases_history
 
     #ジャンルの選択が「--」の時は保存できないようにする
     validates :category_id,:condition_id,:delivery_fee_id,:shipping_area_id,:days_to_ship_id, numericality: { other_than: 0 , message: "can't be blank"}
