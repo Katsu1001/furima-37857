@@ -14,7 +14,7 @@ class PurchasePurchasesHistory
  end
 
   # #ジャンルの選択が「--」の時は保存できないようにするバリデーション設定する
- validates :shipping_area_id, numericality: { other_than: 0 , message: "can't be blank"}
+ validates :shipping_area_id, numericality: { other_than: 0 }
 
 #郵便番号は、「3桁ハイフン4桁」の半角文字列のみ保存可能なこと（良い例：123-4567　良くない例：1234567）のバリデーション
  validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
